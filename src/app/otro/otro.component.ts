@@ -25,9 +25,6 @@ export class OtroComponent implements OnInit {
     return this.myForm.get('mail')
   }
 
-
-
-
   constructor(fb: FormBuilder) {
     this.myForm = fb.group({ 'nombre': ['', Validators.required], 'apellido': ['', Validators.required], 'mail': [{ value: '', disabled: true }], 'newsletter': [true] })
 
