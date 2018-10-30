@@ -1,0 +1,21 @@
+<form #f="ngForm" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+  <div>Nombre
+    <input type="text" name="nombre" id="nombreInput" [formControl]="myForm.controls['nombre']">
+    <span *ngIf="nombre.invalid">el campo no es valido</span>
+  </div>
+  <div>Apellido
+    <input type="text" name="apellido" id="apellidoInput" [formControl]="myForm.controls['apellido']">
+    <span *ngIf="apellido.invalid">el campo no es valido</span>
+  </div>
+
+  <div> Mail
+    <input type="text" name="mail" [formControl]="myForm.controls['mail']" email>
+    <span *ngIf="mail.invalid">el campo no es valido</span>
+  </div>
+
+  <div> Newsletter
+    <input type="checkbox" name="newsletter" [formControl]="myForm.controls['newsletter']">
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Enviar</button>
+</form>>

@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.valid)">
+  <div>Nombre
+    <input type="text" name="nombre" #nombre="ngModel" ngModel required>
+    <span *ngIf="nombre.touched && nombre.invalid">el campo no es valido</span>
+  </div>
+  <div>Apellido
+    <input type="text" name="apellido" #apellido="ngModel" ngModel required> </div>
+  <div> Mail
+    <input type="text" name="mail" #mail="ngModel" email ngModel required> </div>
+  <span *ngIf="mail.hasError('required')">aaaaaa</span>
+  <div>Telefono
+    <input type="email" name="telefono" #tefono="ngModel" ngModel required>
+
+  </div>
+  <button type="submit" [disabled]="f.invalid">Enviar</button>
+</form>>
